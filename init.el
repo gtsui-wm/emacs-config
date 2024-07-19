@@ -41,6 +41,11 @@
 ;; Theme
 (load-theme 'tango-dark t)
 
+;; Transparent `emacs`
+(when (display-graphic-p)
+  (set-frame-parameter (selected-frame) 'alpha '(80 . 80))
+  (add-to-list 'default-frame-alist '(alpha . (80 . 80))))
+
 ;; Initialize package sources
 (require 'package)
 (setq package-archives '(("melpha" . "http://melpa.org/packages/")
